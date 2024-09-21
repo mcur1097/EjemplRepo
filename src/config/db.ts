@@ -1,4 +1,7 @@
 import mysql2 from 'mysql2/promise';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const db = mysql2.createPool({
     host: process.env.DB_HOST,
@@ -19,3 +22,5 @@ async function chackConnection() {
         console.error('Error al conectar a la base de datos');
     }
 }
+
+export default db;
