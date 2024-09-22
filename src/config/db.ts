@@ -13,7 +13,7 @@ const db = mysql2.createPool({
     queueLimit:0,
 });
 
-async function chackConnection() {
+async function checkConnection() {
     try {
         const connection = await db.getConnection();
         console.log('Conecctado a la base de datos');
@@ -23,4 +23,5 @@ async function chackConnection() {
     }
 }
 
+checkConnection();
 export default db;
